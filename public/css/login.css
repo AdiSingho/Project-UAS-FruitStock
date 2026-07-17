@@ -1,0 +1,158 @@
+/* ===========================
+   FruitStock Login
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#F8F9FF;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    padding:40px;
+}
+
+.login-card{
+    position:relative;
+    width:448px;
+    background:#fff;
+    border:1px solid #BBCABF;
+    border-radius:12px;
+    box-shadow:0 10px 15px rgba(0,0,0,.1);
+    padding:32px;
+    overflow:hidden;
+}
+
+.login-card::before{
+    content:"";
+    position:absolute;
+    width:130px;
+    height:130px;
+    right:-60px;
+    top:-60px;
+    background:#10B981;
+    opacity:.2;
+    filter:blur(20px);
+    border-radius:50%;
+}
+
+.logo{
+    display:flex;
+    justify-content:center;
+    margin-bottom:15px;
+}
+
+.logo img{
+    width:70px;
+}
+
+.login-card h2{
+    text-align:center;
+    color:#006C49;
+    font-size:32px;
+    margin-bottom:5px;
+}
+
+.login-card p{
+    text-align:center;
+    color:#3C4A42;
+    margin-bottom:30px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    font-size:12px;
+    font-weight:600;
+    margin-bottom:8px;
+    color:#3C4A42;
+}
+
+.form-group input{
+    width:100%;
+    height:46px;
+    border:1px solid #BBCABF;
+    border-radius:8px;
+    padding:0 15px;
+    font-size:14px;
+    outline:none;
+}
+
+.form-group input:focus{
+    border-color:#006C49;
+    box-shadow:0 0 5px rgba(0,108,73,.3);
+}
+
+button{
+    width:100%;
+    height:54px;
+    background:#006C49;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#005238;
+}
+
+.register-link{
+    margin-top:20px;
+    text-align:center;
+    font-size:14px;
+}
+
+.register-link a{
+    color:#006C49;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.register-link a:hover{
+    text-decoration:underline;
+}
+
+.alert{
+    background:#fdecea;
+    color:#b00020;
+    padding:10px;
+    border-radius:6px;
+    margin-bottom:20px;
+}
+
+small{
+    color:red;
+}
+
+@media(max-width:500px){
+
+.login-card{
+    width:100%;
+    padding:25px;
+}
+
+.login-card h2{
+    font-size:28px;
+}
+
+}
