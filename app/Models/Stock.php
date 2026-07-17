@@ -1,0 +1,52 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('stocks', function (Blueprint $table) {
+            $table->id();
+
+            $table->foreignId('fruit_id')
+                ->constrained('fruits')
+                ->cascadeOnUpdate()
+                ->restrictOnDelete();
+
+            $table->foreignId('warehouse_id')
+                ->constrained('warehouses')
+                ->cascadeOnUpdate()
+                ->restrictOnDelete();
+
+            $table->foreignId('supplier_id')
+                ->constrained('suppliers')
+                ->cascadeOnUpdate()
+                ->restrictOnDelete();
+
+            $table->string('batch_code')->unique();
+
+            $table->integer('quantity');
+
+            $table->date('entry_date');
+
+            $table->date('estimated_expired_date');
+
+            $table->enum('status', [
+                'available',
+                'low_stock',
+                'expired',
+                'damaged'
+            ])->default('available');
+
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('stocks');
+    }
+};
