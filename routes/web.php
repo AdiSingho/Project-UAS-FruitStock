@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GudangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/tambah-staf', [UserController::class, 'create'])->name('admin.users.create');
     Route::post('/admin/tambah-staf', [UserController::class, 'store'])->name('admin.users.store');
 });
+
+// Gudang & Stok (Ditambahkan agar halaman gudang.blade.php bisa diakses)
+Route::get('/gudang', [GudangController::class, 'index'])->name('gudang.index');
